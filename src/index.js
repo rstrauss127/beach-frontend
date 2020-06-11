@@ -1,39 +1,57 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+//import './index.css';
 
-const amenitiesList = [
-  "Heated Pool",
-  "Full Sized Washer & Dryer",
-  "Free Wifi",
-  "Cable TV & DVD Player",
-  "Covered & Assigned Parking",
-  "Elevator"
-];
+const bla = require('./data.js');
+const quotes = bla.quotes;
 
-function WelcomeHeader() {
-  return (
-    <div>
-      <h1>Visit Madeira Beach!</h1>
-      <p>
-        Welcome! You can't get any closer to the beach than this! Our three
-        renovated condos have been designed with your comfort in mind. We are
-        located in Villa Madeira, across the street from the Candy Kitchen, and
-        just a short walk to world famous Johns Pass. Our units are all directly
-        on the Gulf with outstanding views of the beach. We provide many
-        amenities that other condo rentals do not, such as top quality linens,
-        including plush bath towels, large beach towels, toys for your children,
-        fully equipped kitchens, and lounges and chairs for the beach.
-      </p>
-    </div>
-  );
+class Quote extends React.Component {
+  renderStatement(i) {
+    return <Statement value={i} />
+  }
+
+  renderAuthor(i) {
+    return <Author value={i} />
+  }
+
+  render() {
+    return(
+      <div className="Quote">
+        {this.renderStatement(0)}  {this.renderAuthor(0)}
+      </div>
+    );
+  }
 }
 
-const rootElement = document.getElementById("root");
+class Statement extends React.Component {
+  render() {
+    return(
+      <div>{quotes[0].quote}</div>
+    );
+  }
+}
+
+class Author extends React.Component {
+  render() {
+    return(
+      <div>{quotes[0].author}</div>
+    );
+  }
+}
+
+class Source extends React.Component{
+  render() {
+    return(
+      <div>{quotes[0].book}</div>
+    );
+  }
+}
+
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <WelcomeHeader />
-    <App amenities={amenitiesList} />
-  </React.StrictMode>,
-  rootElement
+  <Quote />,
+  document.getElementById('root')
 );
+
+console.log(quotes[0].quote);

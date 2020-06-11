@@ -57,8 +57,25 @@ class Source extends React.Component{
 
 ReactDOM.render(
   <>
-  <Quote value={1}/>
-  <Quote value={2}/>
+    <Quote value={0}/>
+    <Quote value={1}/>
+    <Quote value={2}/>
+    <Quote value={3}/>
+    <Quote value={4}/>
+    <Quote value={5}/>
+    <Quote value={6}/>
+    <Quote value={7}/>
+    <Quote value={8}/>
+    <Quote value={9}/>
+    <Quote value={10}/>
+    <Quote value={11}/>
+    <Quote value={12}/>
+    <Quote value={13}/>
+    <Quote value={14}/>
+    <Quote value={15}/>
+    <Quote value={16}/>
+    <Quote value={17}/>
+    <Quote value={18}/>
   </>,
   document.getElementById('root')
 );

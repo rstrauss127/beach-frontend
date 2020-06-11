@@ -14,10 +14,14 @@ class Quote extends React.Component {
     return <Author value={i} />
   }
 
+  renderSource(i) {
+    return <Source value={i} />
+  }
+
   render() {
     return(
       <div className="Quote">
-        {this.renderStatement(0)}  {this.renderAuthor(0)}
+        {this.renderStatement(0)}  {this.renderAuthor(0)} {this.renderSource(0)}
       </div>
     );
   }

@@ -21,7 +21,9 @@ class Quote extends React.Component {
   render() {
     return(
       <div className="Quote">
-        {this.renderStatement(0)}  {this.renderAuthor(0)} {this.renderSource(0)}
+        {this.renderStatement(this.props.value)} 
+        {this.renderAuthor(this.props.value)}
+        {this.renderSource(this.props.value)}
       </div>
     );
   }
@@ -30,7 +32,7 @@ class Quote extends React.Component {
 class Statement extends React.Component {
   render() {
     return(
-      <div>{quotes[0].quote}</div>
+      <div name="Statement">{quotes[this.props.value].quote}</div>
     );
   }
 }
@@ -38,7 +40,7 @@ class Statement extends React.Component {
 class Author extends React.Component {
   render() {
     return(
-      <div>{quotes[0].author}</div>
+      <div>{quotes[this.props.value].author}</div>
     );
   }
 }
@@ -46,16 +48,13 @@ class Author extends React.Component {
 class Source extends React.Component{
   render() {
     return(
-      <div>{quotes[0].book}</div>
+      <div>{quotes[this.props.value].book}</div>
     );
   }
 }
 
 
-
 ReactDOM.render(
-  <Quote />,
+  <Quote value={1}/>,
   document.getElementById('root')
 );
-
-console.log(quotes[0].quote);

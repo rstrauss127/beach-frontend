@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import './index.css';
+import './index.css';
 
 const bla = require('./data.js');
 const quotes = bla.quotes;
@@ -20,7 +20,7 @@ class Quote extends React.Component {
 
   render() {
     return(
-      <div className="Quote">
+      <div class="quote">
         {this.renderStatement(this.props.value)} 
         {this.renderAuthor(this.props.value)}
         {this.renderSource(this.props.value)}
@@ -32,7 +32,7 @@ class Quote extends React.Component {
 class Statement extends React.Component {
   render() {
     return(
-      <div name="Statement">{quotes[this.props.value].quote}</div>
+      <div class="quoteText">{quotes[this.props.value].quote}</div>
     );
   }
 }
@@ -40,7 +40,7 @@ class Statement extends React.Component {
 class Author extends React.Component {
   render() {
     return(
-      <div>{quotes[this.props.value].author}</div>
+      <div class="authorOrTitle">{quotes[this.props.value].author}</div>
     );
   }
 }
@@ -54,7 +54,11 @@ class Source extends React.Component{
 }
 
 
+
 ReactDOM.render(
-  <Quote value={1}/>,
+  <>
+  <Quote value={1}/>
+  <Quote value={2}/>
+  </>,
   document.getElementById('root')
 );
